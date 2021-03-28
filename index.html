@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color: blue;"><form action="{{ url_for('predict')}}" method="post">
+<h2>Stroke prediction</h2>
+<h3>Age</h3>
+<input id="first" name="age" type="number " />
+<h3>Have you ever been married?</h3>
+<br /><select id="married" name="marital_status" required="required">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+<h3>What is your work type?</h3>
+<br /><select id="work" name="work_type" required="required">
+<option value="private">Private</option>
+<option value="self_emp">Self-employed</option>
+<option value="govt_emp">Government job</option>
+<option value="children">Children</option>
+<option value="never_worked">Never worked</option>
+</select>
+<h3>Are you suffering from heart disease?</h3>
+<br /><select id="heart" name="heart_disease" required="required">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+<h3>Are you suffering from hypertension?</h3>
+<br /><select id="hypertension" name="hypertension" required="required">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+<h3>Do you smoke?</h3>
+<br /><select id="smoke" name="smoke" required="required">
+<option value="never_smoked">Never smoked</option>
+<option value="formerly_smoked">Formerly smoked</option>
+<option value="smokes">Smokes</option>
+<option value="unknown">Unknown</option>
+</select><br /><br /><button id="sub" type="submit ">Predict</button></form><br /><br />
+<h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+
+</html>
